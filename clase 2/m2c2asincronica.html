@@ -10,8 +10,8 @@
 <body>
 <h1> TAREA ASINCRONICA</h1>
 <hr>
-Estatura <input style="background-color: lightgrey;" type="text" name="x1" id="e1" title="Estatura en cm" autofocus><br><br>
-Peso.......<input style="background-color: lightgrey;" type="text" name="x2" id="e2" title="Peso en kilos"><br><br>
+Peso <input style="background-color: lightgrey;" type="text" name="x1" id="e1" title="Estatura en metros" autofocus><br><br>
+Estatura <input style="background-color: lightgrey;" type="text" name="x2" id="e2" title="Peso en kilos"><br><br>
 Resultado<input style="background-color: lightgrey;" type="text" name="x3" id="res1"><br><br>
 <button onclick="calcular();"><b>Indice de Masa Muscular</b></button><br><hr>
 
@@ -23,19 +23,20 @@ Resultado<input style="background-color: lightgrey;" type="text" name="x3" id="r
 	function calcular(){
 		let v1= document.getElementById('e1').value;
 		let v2= document.getElementById('e2').value;
-		let vv1= parseInt(v1,10);
-		let vv2= parseInt(v2,10);
+		let vv1= parseFloat(v1,10);
+		let vv2= parseFloat(v2,10);
 		let res="";
-		let imc= (vv2/vv1);
+		let imc= vv1/(vv2*vv2);
 		alert("Resultado:" +imc);
 
-		if (imc<=18) {
+		if (imc<=18.5) {
 			res="Peso inferior al normal";
-			}
+		}
 
 
 		document.getElementById('res1').value=imc;
 		document.getElementById('res2').value=res;
+		
 	}
 
 
