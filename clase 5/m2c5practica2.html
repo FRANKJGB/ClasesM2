@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<h1>Bucle</h1>
+	<br>
+	<p>
+		<button onclick="repetir02();">Activar</button>
+	</p>
+
+	<script type="text/javascript">
+		function repetir02(){
+			let x="s";
+			let acum=0
+			while(x=="s"){
+				let v1=parseInt(prompt("ingrese valor"));
+				acum=acum+v1;
+				x=prompt("desea seguir ingresando valores(s/n)")
+				if (x!="s"){
+					alert("salir del bucle");
+				}
+				
+			}
+			document.write("suma de valores: "+acum);
+		}
+
+	 </script>
+
+</body>
+</html>
