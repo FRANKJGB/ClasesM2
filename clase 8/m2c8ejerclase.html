@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>calcular iva</title>
+</head>
+<body>
+
+	<div class="container">
+	<h1>CALCULO DE IVA</h1><br>
+	Ingrese Valor: <input type="text" name="v1" id="v1"><br>
+	<button onclick="llamar()">Calcular Iva</button>
+	<p id="resul"></p>
+	</div>
+
+	<script type="text/javascript">
+		const iva={
+			siva=0.19,
+			niva=1.19
+		}
+	
+		function llamar(){
+			let v1=document.getElementById('v1').value;
+
+
+
+
+	 
+	 }	
+        
+   </script>
+		
+</body>
+</html>
+
+const iva={
+			siva:0.19,
+			miva:1.19
+		}
+		function calcula(){
+			let v1=document.getElementById('valor').value;
+			document.getElementById('resp').innerHTML=iva(v1);
+		}
+		function iva(v1){
+			let res=parseInt(v1)*iva.siva;
+			let res2=parseInt(v1)*iva.miva;
+			let respuesta="iva:"+res+"valor total :"+res2;
+			return respuesta;
+
+
+		}
+	</script>
+</body>
+</html>
+<!--Ejercicio clase 08 – M2C8
+Tarea en clase:
+En una nueva página web, implemente un formulario donde se pueda ingresar un valor y luego de eso genera
+una funcionalidad JavaScript la cual usando Funciones le pasemos el monto bruto y esta función nos retorne
+el valor a pagar con el IVA agregado, entregue esta información al usuario de la manera que usted estime
+conveniente.-->
+
+<body>
+    <h1>Funciones</h1><br><br>
+    Ingrese valor bruto:<input type="text" name="v1" id="v1"></body><br>
+    Ingrese el IVA:<input type="text" name="iva" id="iva"></body><br>
+    
+    
+    <button onclick="llamar();">Activar</button><br>
+    
+    <p id="resultado"></p>
+    <!-- ******************** -->
+    <script type="text/javascript">
+        function llamar() {
+            let vv1 = parseInt(document.getElementById('v1').value);
+           
+            
+           
+            document.getElementById("resultado").innerHTML = suma(vv1);
+        }
+
+
+        function suma(vv1) {
+            let ivar = parseInt(document.getElementById('iva').value);
+            let valor = ((vv1*ivar)/100)+vv1;
+                
+                return valor;
+                
+        }
