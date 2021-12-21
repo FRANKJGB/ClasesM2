@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>arreglos</title>
+</head>
+<body>
+	<h1>Arreglos</h1>
+	<br>
+	<p>
+		Ingrese nombre: <input type="text" name="nom" id="nom"><br>
+		<button onclick="agregar();">Ingresar</button><br>
+		<button onclick="quitar();">Quitar ultimo elemento</button><br>
+		<button onclick="kill();">Quitar primer elemento</button><br>
+		
+		Ingrese posicion a modificar<input type="text" name="po" id="po"><br>
+		Ingrese nuevo valor<input type="text" name="va" id="va"><br>
+		<button onclick="modificar();">Modificar</button><br>
+	</p>
+	<p id="ar">
+		
+	</p>
+	<script type="text/javascript">
+		var arreglo=[];
+
+		function matar(){
+			let pos=document.getElementById("pos").value;|
+		}
+
+		function modificar(){
+			let va=document.getElementById('va').value;
+			let po=document.getElementById('po').value;
+			arreglo[po]=va;
+			llenar();
+		}
+
+		function agregar(){
+			let v1=document.getElementById('nom').value;
+			arreglo.push(v1);
+			document.getElementById('nom').value="";
+			llenar();
+		}		
+
+
+		function kill(){
+			arreglo.shift();
+			llenar();
+		}
+
+		function quitar(){
+			arreglo.pop();
+			llenar();
+		}
+
+		function llenar(){
+			let fragmento="";
+			fragmento="<table border='1'>";
+			for (var i = 0; i < arreglo.length; i++){
+				fragmento+="<tr><td>"+i+" - "+arreglo[i]+"</td></tr>";
+			}
+			fragmento+="</table>";
+			document.getElementById('ar').innerHTML=fragmento;
+		}
+	</script>
+</body>
+</html>
