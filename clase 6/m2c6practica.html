@@ -3,48 +3,39 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>arreglos</title>
 </head>
 <body>
-
-	<h1>Bucle</h1>
+	<h1>Areglos</h1>
 	<br>
 	<p>
-		<button onclick="repetir02();">Activar</button>
+		Ingrese nombre: <input type="text" name="nom" id="nom"><br>
+		<button onclick="agregar()">Ingresar</button>
 	</p>
-
+	<p id="ar">
+		
+	</p>
 	<script type="text/javascript">
-		function repetir02(){
-			let x=0;
-			while(x<4){
-				document.write("iteraccion: "+x+"<br>");
-				x++;
+		var arreglo=[];
+		function agregar(){
+			let v1=document.getElementById('nom').value;
+			arreglo.push(v1);
+			document.getElementById('nom').value;"";
+			alert("largo del arreglito: "+arreglo.length);
+			let fragmento="";
+			//let pos=arreglo.lenght-1;
+			//document.getElementById('ar').innerHTML=arreglo[pos];
+
+           
+			fragmento="<table border='1'>";
+			for (var i = 0; i < arreglo.lenght; i++) {
+				fragmento+="<tr><td>"+arreglo[i]+"</td></tr>";
 			}
+			fragmento+="</table>";
+			document.getElementById('ar').innerHTML=fragmento;
+		}		
 
-		}
 
-
-
-
-		function repetir01(){
-			let i;
-			for (i = 0; i <4; i++){
-				let agno=prompt("ingrese año");
-				let resto=(parseInt(agno)%4);
-				alert("resto: "+resto);
-				if(resto==0){
-					document.write("año bisiesto<br>");
-				}else{
-					document.write("año normal<br>");
-				}
-
-				/*document.write("iteracion:"+i+"<br>");
-				alert("valor de variable 'i' :"+1);*/
-		}
-			document.write("fin de ciclo for");
-	 }
-
-	 </script>
-
+	</script>
 </body>
 </html>
