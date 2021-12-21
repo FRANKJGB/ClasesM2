@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>manejo de funciones</title>
+</head>
+<body>
+	<h1>Funciones</h1><br>
+	Ingrese el Radio: <input type="text" name="v1" id="v1"><br>
+	
+	<button onclick="llamar()">Calcular</button>
+	<p id="resuld">Diametro</p>
+	<p id="resulp">Perimetro</p>
+	<p id="resula">Area</p>
+
+	<script type="text/javascript">
+
+		function llamar(){
+			let vv1=document.getElementById('v1').value;
+			
+			document.getElementById('resuld').innerHTML="El diametro:"+diametro(vv1);
+			document.getElementById('resulp').innerHTML=+perimetro(vv1);
+			document.getElementById('resula').innerHTML=+area(vv1);
+		}
+
+		function diametro(vv1){
+			let resuld=2*parseInt(vv1);
+			return resuld;
+		  }
+
+		function perimetro(vv1){
+			let resulp=2*Math.PI*parseInt(vv1);
+			return resulp;
+		}
+        
+        function area(vv1){
+        	let resula=Math.PI*parseInt(vv1);
+        	return resula;
+        }
+        
+   </script>
+</body>
+</html>
